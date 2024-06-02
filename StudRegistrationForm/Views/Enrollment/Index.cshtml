@@ -1,0 +1,49 @@
+﻿@model StudRegistrationForm.Models.StudentReg
+
+
+@{
+    ViewBag.Title = "Student Registration";
+}
+
+<style>
+    .btn {
+        padding: 7px;
+    }
+</style>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+
+ 
+
+</head>
+
+
+<body>
+    @using (Html.BeginForm("Index", "Enrollment", FormMethod.Post))
+    {
+        <p class="container register">
+            <h2>WELCOME!!</h2><h3>Student Registration</h3>
+        <p class="form-group">
+            @Html.TextBoxFor(e => e.name, new { @class = "form-control", placeholder = "Name" })
+            @Html.ValidationMessageFor(e => e.name, "", new { @class = "text-danger" })
+        </p>
+        <p class="form-group">
+            @Html.TextBoxFor(e => e.email, new { @class = "form-control", placeholder = "Email" })
+            @Html.ValidationMessageFor(e => e.email, "", new { @class = "text-danger" })
+        </p>
+        <p class="form-group">
+            @Html.TextBoxFor(e => e.mobno, new { @class = "form-control", placeholder = "Mobile number", maxlength = 10 })
+            @Html.ValidationMessageFor(e => e.mobno, "", new { @class = "text-danger" })
+        </p>
+        <button class="btn btn-danger" type="submit">Register</button>
+        </p>
+    }
+
+
+</body>
+
+</html>
+
